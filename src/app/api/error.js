@@ -7,7 +7,7 @@ export default function Error({ error, reset }) {
     console.log("Error", error);
   }, [error]);
 
-  const reset = () => {
+  const resetButton = () => {
     reset();
   };
 
@@ -15,7 +15,7 @@ export default function Error({ error, reset }) {
     <div>
       <h1>Error</h1>
       <p>{error.message}</p>
-      <button onClick={reset}>Reset</button>
+      <button onClick={resetButton}>Reset</button>
     </div>
   );
 }
