@@ -1,5 +1,6 @@
 import isValidURL from "@/app/lib/validateURL";
 import { NextResponse } from "next/server";
+import { addLink } from "@/app/lib/db";
 
 export async function POST(request) {
   //   const formData = await request.formData();
@@ -20,5 +21,6 @@ export async function POST(request) {
     return NextResponse.json({ message: "Invalid URL" }, { status: 400 });
   }
 
-  return NextResponse.json(data, { status: 201 });
+  const dbResponse = await addLink(url);
+  return NextResponse.json(dbResponse, { status: 201 });
 }
