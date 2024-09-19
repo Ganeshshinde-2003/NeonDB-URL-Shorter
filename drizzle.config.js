@@ -5,6 +5,6 @@ export default defineConfig({
   schema: "./src/app/lib/schema.js",
   out: "./src/migrations",
   dbCredentials: {
-    url: "postgresql://neondb_owner:0srAdXlpRe8i@ep-sweet-rice-a54dtdnr.us-east-2.aws.neon.tech/neondb?sslmode=require",
+    url: "postgresql://neondb_owner:mUH2NbtvXij3@ep-shrill-mud-a50ebozi.us-east-2.aws.neon.tech/neondb?sslmode=require",
   },
 });

@@ -1,11 +1,13 @@
 import isValidURL from "@/app/lib/validateURL";
 import { NextResponse } from "next/server";
-import { addLink } from "@/app/lib/db";
+import { addLink, getMinLinks } from "@/app/lib/db";
+
+export async function GET(request) {
+  const links = await getMinLinks(100, 0)
+  return NextResponse.json(links, {status: 200})
+}
 
 export async function POST(request) {
-  //   const formData = await request.formData();
-  //   console.log(formData);
-
   const contentType = await request.headers.get("content-type");
   if (contentType !== "application/json") {
     return NextResponse.json(
